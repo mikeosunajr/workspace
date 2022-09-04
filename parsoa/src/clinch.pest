@@ -1,0 +1,15 @@
+COMMENT = _{ "--" ~ (!"\n" ~ ANY)* }
+WHITESPACE = _{ " " | "\r" | "\n" | "\t"}
+
+expr = { ASCII+ }
+
+portToken = {"port"}
+expostingToken = {"exposing"}
+moduleToken = {"module"}
+
+
+main = {
+    SOI ~
+    expr ~
+    EOI
+}
